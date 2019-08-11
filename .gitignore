@@ -3,6 +3,7 @@ overrides/config/shadowfacts/DiscordChat/DiscordChat.conf
 overrides/config/Chikachi/discordintegration.json
 
 # no mod binaries, beside overrides mods
+.idea/
 *.jar
 overrides/mods/*.jar
 !overrides/mods/Flamingo-1\.12-v1\.11\.jar
