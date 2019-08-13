@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@master
+    - name: Run a multi-line script
+      run: |
+         curl "$(curl 'https://minecraft.curseforge.com/projects/224472' -si | awk '/location: (.*)/ {print $2}' | tr -d "\r")/download/2679415" -o test.jar 
