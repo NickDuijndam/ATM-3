@@ -1,0 +1,4 @@
+name: 'Container Action Template'
+runs:
+  using: 'docker'
+  image: '../../Dockerfile'
