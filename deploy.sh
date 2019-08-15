@@ -19,6 +19,7 @@ name="$(jq -r '.name' <<< $manifest)__$(jq -r '.version' <<< $manifest).zip"
 name=${name// /_}
 cd ../
 tar --exclude='override_mods.txt' --exclude='dl_overrides.py' -cf  ../$name *
+ls -la
 
 curl -X POST https://api.dropboxapi.com/2/files/delete_v2 \
     --header "Authorization: Bearer $DROPBOX_TOKEN" \
