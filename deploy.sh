@@ -20,9 +20,14 @@ name=${name// /_}
 cd ../
 tar --exclude='override_mods.txt' --exclude='dl_overrides.py' -cf  ../$name *
 
+curl -X POST https://api.dropboxapi.com/2/files/delete_v2 \
+    --header "Authorization: Bearer $DROPBOX_TOKEN" \
+    --header "Content-Type: application/json" \
+    --data "{\"path\": \"/ATM3\"}"
+
 curl -X POST https://content.dropboxapi.com/2/files/upload \
     --header "Authorization: Bearer $DROPBOX_TOKEN" \
-    --header "Dropbox-API-Arg: {\"path\": \"/${name}\",\"mode\": \"add\",\"autorename\": true,\"mute\": false,\"strict_conflict\": false}" \
+    --header "Dropbox-API-Arg: {\"path\": \"/ATM3/${name}\",\"mode\": \"add\",\"autorename\": true,\"mute\": false,\"strict_conflict\": false}" \
     --header "Content-Type: application/octet-stream" \
     --data-binary "$name"
 
