@@ -8,6 +8,7 @@ overrides/config/Chikachi/discordintegration.json
 overrides/mods/*.jar
 !overrides/mods/Flamingo-1\.12-v1\.11\.jar
 !overrides/mods/spark-forge.jar
+!overrides/mods/ImmersiveEngineering-0.12-90.jar
 !overrides/bin/modpack.jar
 !overrides/mods/Nutrition-1\.12\.2-4\.3\.0\.jar
 !overrides/mods/Computronics-1\.12\.1-1\.6\.5\.jar
